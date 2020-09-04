@@ -26,8 +26,7 @@ latest_tweets.take(10).each do |tweet|
 
     # only tweet if hasn't been tweeted before,
     # and there have been less than 5 tweets in this cycle so far
-    unless (account_tweets.include?(tweet) || tweet_count > 5)
-        # binding.pry
+    unless (account_tweets.include?(tweet) || tweet_count > 5 || tweet.user.name=="Yoni Den")
         tweet_count += 1
         twitter.retweet tweet
     end
